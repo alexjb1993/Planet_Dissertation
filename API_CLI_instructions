@@ -1,0 +1,15 @@
+# Path to Folder for Data Downloads
+C:\Users\alexj\Documents\UCL\disso\Planet Downloads
+# Setting the API Key needed to download imagery (Will change depending on user)
+SET PL_API_KEY=5d04230e50a149fda72cb844b2ce9a26
+
+# download data from the specified area (area must be saves as a file called study_area.json stored in the download folder)
+planet data download --item-type PSScene4Band --geom study_area.json --date acquired gt 2018-04-14 --date acquired lt 2018-04-21 --asset-type analytic
+# download associated metadata for each image
+planet data download --item-type PSScene4Band --geom study_area.json --date acquired gt 2018-04-14 --date acquired lt 2018-04-21 --asset-type analytic_xml
+
+# download specific subarea
+planet data download --activate-only --item-type PSScene4Band --geom study_area.json --date acquired gt 2018-04-14 --date acquired lt 2018-04-21 --asset-type analytic
+#
+planet data download --activate-only --item-type PSScene4Band --asset-type analytic --string-in id 20180414_102435_0f35 --quiet
+#
